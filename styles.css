@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+html {
+    font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+    html {
+        font-size:110%;
+      }
+  }
+  
+  @media screen and (min-width:1024px) {
+      html{
+          font-size: 120%;
+      }
+  }
+  
+  @media screen and (min-width:1200px) {
+      html{
+          font-size: 130%;
+      }
+  }
+body {
+    font-family: 'League Spartan', sans-serif;
+    background: url(images/bg-pattern-top-desktop.svg) no-repeat top left,
+    url(images/bg-pattern-bottom-desktop.svg) no-repeat bottom right;
+    min-height: 100vh;
+}
+main {
+    width: 80%;
+    margin: 3rem auto;
+    /* background-color: pink; */
+}
+.our_products {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+    color: var(--very-dark-magenta);
+}
+h1 {
+    font-size: 2rem;
+    
+}
+.our_products p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+.rating {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 0.975rem;
+}
+.rating .star {
+    display: block;
+    margin: 1rem 0;
+}
+.rating p {
+    margin-bottom: 1rem;
+    background-color: var(--light-grayish-magenta);
+    padding: 1rem 0;
+}
+.comment {
+    background-color: var(--very-dark-magenta);
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+    border-radius: 0.5rem;
+    color: var(--white);
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-template-columns: 4em 1fr;
+    grid-template-areas: "image buyer"
+                        "comment comment";
+}
+.comment img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    object-fit: contain;
+    grid-area: image;
+}
+.comment .buyer {
+    grid-area: buyer;
+} 
+.comment .buyer h3 {
+    line-height: 1.5;
+}
+.comment .buyer p {
+    color: var(--soft-pink);
+}
+.comment .quote {
+    grid-area: comment;
+    line-height: 1.5;
+}
+.attribution {
+    text-align: center;
+}
+@media (min-width: 1200px) {
+    .customers {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 30% 70%;
+        grid-template-areas: "section1 section2"
+                             "section1 section2";
+    }
+    .our_products {
+        grid-area: section1;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+    .rating {
+        grid-area: section2 ;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+    }
+    .rating .star {
+        margin: unset;
+        padding-left: 1.5rem;
+    }
+    .rating p {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        margin-top: 1rem;
+        max-width: 60%;
+    }
+    .rating p:nth-of-type(1) {
+        margin-left: 10rem;
+    }
+    .rating p:nth-of-type(2) {
+        margin-left: 12rem;
+    }
+    .rating p:nth-of-type(3) {
+        margin-left: 14rem;
+    }
+    .comments {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .comment2 {
+        position: relative;
+        top: 1rem;
+    }
+    .comment3 {
+        position: relative;
+        top: 2rem;
+    }
+}
+
